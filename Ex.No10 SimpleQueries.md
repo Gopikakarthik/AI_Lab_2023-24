@@ -1,6 +1,6 @@
 # Ex.No: 10  Logic Programming –  Simple queries from facts and rules
-### DATE:                                                                            
-### REGISTER NUMBER : 
+### DATE:26/9/24                                                                            
+### REGISTER NUMBER :212222040046 
 ### AIM: 
 To write a prolog program to find the answer of query. 
 ###  Algorithm:
@@ -21,10 +21,20 @@ Construct the FOL representation for the following sentences <br>
 5.	 Bill eats peanuts  <br> 
    Convert into clause form and Prove that John like Apple by using Prolog. <br> 
 ### Program:
-
-
+```
+likes(john,X):- 
+ food(X). 
+eats(bill,X):- 
+ eats(sue,X). 
+eats(Y,X):- 
+ food(X). 
+eats(bill,peanuts). 
+food(apple). 
+food(chicken). 
+food(peanuts).
+```
 ### Output:
-
+![385357726-73a98113-3809-4693-a182-a89322d19163](https://github.com/user-attachments/assets/c02bbf08-56ea-46c2-bd97-477788cb2f61)
 ### Task 2:
 Consider the following facts and represent them in predicate form: <br>              
 1.	Steve likes easy courses. <br> 
@@ -32,20 +42,43 @@ Consider the following facts and represent them in predicate form: <br>
 3. All the courses in Have fun department are easy <br> 
 4. BK301 is Have fun department course.<br> 
 Convert the facts in predicate form to clauses and then prove by resolution: “Steve likes BK301 course”<br> 
-
 ### Program:
-
-
+```
+likes(steve,X):- 
+ easycourse(X). 
+hard(sciencecourse). 
+easycourse(X):- 
+ course(X,dept(havefun)). 
+course(bk301,dept(havefun)).
+```
 ### Output:
-
+![385359611-3dd7bb24-603f-46e9-be8c-cd9847dcc001](https://github.com/user-attachments/assets/02341bfc-4791-4c2d-8075-6c2b72aa57a1)
 ### Task 3:
 Consider the statement <br> 
 “This is a crime for an American to sell weapons to hostile nations. The Nano , enemy of America has some missiles and its missiles were sold it by Colonal West who is an American” <br> 
 Convert to Clause form and prove west is criminal by using Prolog.<br> 
 ### Program:
+```
+criminal(X):-
+	american(X),
+	weapon(Y),
+	hostile(Z),
+	sells(X,Y,Z).
+weapon(Y):-
+                 missile(Y).
+hostile(Z):-
+                 enemy(Z,X).
 
+sells(west,Y,nano):-
+	missile(Y),
+	owns(nano,Y).
 
+missile(m).
+owns(nano,m).
+enemy(nano,america).
+american(west).
+```
 ### Output:
-
+![385359524-8e563555-d750-4fda-9b95-4eecf5b2843b](https://github.com/user-attachments/assets/055a3635-3d2a-4ea3-9423-0dd544b54183)
 ### Result:
 Thus the prolog programs were executed successfully and the answer of query was found.
