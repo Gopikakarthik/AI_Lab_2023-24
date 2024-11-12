@@ -1,4 +1,4 @@
-# Ex.No: 10 Learning – Use Supervised Learning  
+# Ex.No: 13 Learning – Use Supervised Learning  
 ### DATE: 24/10/24                                                                           
 ### REGISTER NUMBER : 212222040046
 ### AIM: 
@@ -64,8 +64,6 @@ print(classification_report1)
 lr.predict([[1,80,1,90,1,1,90,1,0,85,1,85]])
 ```
 ### Output:
-
-
-
+![image](https://github.com/user-attachments/assets/5325e045-4b01-47a0-bca0-d5248422d808)
 ### Result:
 Thus the system was trained successfully and the prediction was carried out.
